@@ -2,7 +2,7 @@
     pageEncoding="ISO-8859-1"%>
     
     <%@include file="fragments/header.jsp" %>
-    <%@include file="fragments/footer.jsp" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
