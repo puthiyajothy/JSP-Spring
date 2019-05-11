@@ -2,13 +2,16 @@ package com.app.sgic.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.sql.DataSource;
 
 import com.app.sgic.dao.ClassificationDAO;
 import com.app.sgic.model.Classification;
+import com.mysql.cj.x.protobuf.MysqlxSession.ResetOrBuilder;
 
 public class ClassificationDaoimpl implements ClassificationDAO {
 
@@ -20,8 +23,6 @@ public class ClassificationDaoimpl implements ClassificationDAO {
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
 	}
-
-	
 	
 	@Override
 	public void createClassification(Classification classification) {
@@ -30,9 +31,10 @@ public class ClassificationDaoimpl implements ClassificationDAO {
 		
 		try {
 			connection=dataSource.getConnection();
-			String SQL="INSERT INTO classification(classification_id,classificationcol_name) VALUES(?,?)";
+			String SQL="INSERT INTO classification(classification_id,classification_name) VALUES(?,?)";
 			ps=connection.prepareStatement(SQL);
 		
+			
 			ps.setInt(1, classification.getClassification_id());
 			ps.setString(2, classification.getClassification_name());
 			int executeUpdate =ps.executeUpdate();
@@ -78,9 +80,31 @@ public class ClassificationDaoimpl implements ClassificationDAO {
 	}
 
 	@Override
-	public List<Classification> getAllClassifictionDetails() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<Classification> getAllClassifictionList() {
+		Connection connection=null;
+		PreparedStatement ps=null;
+		List<Classification>classificationList =new ArrayList<Classification>();
+		
+		try
+		{
+		connection=dataSource.getConnection();
+		String SQL ="SELECT classification_id,classification_name FROM classification";
+		ps=connection.prepareStatement(SQL);
+		
+		ResultSet rs=ps.executeQuery();
+		
+		while(rs.next()) {
+			Classification classification=new Classification();
+			classification.setClassification_id(rs.getInt("classification_id"));
+			classification.setClassification_name(rs.getString("classification_name"));
+			
+			classificationList.add(classification);
+		}
+		
+		}catch(Exception e)
+		{
+		}
+		return classificationList;
 	}
 	
 	

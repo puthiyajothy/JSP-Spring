@@ -20,6 +20,7 @@ public class Classifictionserviceimpl implements Classifictionservice {
 	
 	}
 	
+	
 	@Override
 	public Classification fetchClassification(int classifictionId) {
 		return classificationDAO.getClassificationById(classifictionId);
@@ -34,8 +35,7 @@ public class Classifictionserviceimpl implements Classifictionservice {
 
 	@Override
 	public List<Classification> getAllClassifictionList() {
-		// TODO Auto-generated method stub
-		return null;
+		return classificationDAO.getAllClassifictionList();
 	}
 
 	@Override
