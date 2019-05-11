@@ -22,10 +22,10 @@
   <a href="#" class="list-group-item active">
     New Classification
   </a>
-  <a href="Mainclass" class="list-group-item">Main Classifiaction</a>
-  <a href="#" class="list-group-item">Sub Classification</a>
-  <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-  <a href="#" class="list-group-item">Vestibulum at eros</a>
+  <a href="classification.jsp" class="list-group-item">Main Classifiaction</a>
+  <a href="subclassification.jsp" class="list-group-item">Sub Classification</a>
+  <a href="author.jsp" class="list-group-item">Author</a>
+  <a href="#" class="list-group-item">Books</a>
 </div>
 
 

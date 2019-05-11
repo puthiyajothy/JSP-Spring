@@ -39,8 +39,8 @@
 
 <tbody>
 <tr>
-  <td>001</td>
-  <td>Book</td>
+  <td></td>
+  <td></td>
   
   <td><button class="btn btn-primary">Delete</button></td>
   <td><button class="btn btn-success">Edit</button></td>
