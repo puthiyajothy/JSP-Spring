@@ -27,7 +27,7 @@
 
 
 <div class="col-xs-9">
-<table class="table table-hover">
+<table class="table table-hover" id="classificationtable">
 <thead>
 <tr>
 <th>Classification ID</th>
@@ -38,16 +38,10 @@
 </thead>
 
 <tbody>
-<tr>
-  <td></td>
-  <td></td>
-  
-  <td><button class="btn btn-primary">Delete</button></td>
-  <td><button class="btn btn-success">Edit</button></td>
- 
-</tr>
+
 
 </tbody>
+
 
 </table>
 </div>

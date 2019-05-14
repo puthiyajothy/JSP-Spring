@@ -17,7 +17,6 @@ public class ClassificationDaoimpl implements ClassificationDAO {
 
 	
 	//dependency
-	
 	private  DataSource dataSource;
 	
 	public void setDataSource(DataSource dataSource) {
