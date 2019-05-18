@@ -18,20 +18,35 @@ $(document).ready(function() {
 		});
 
 	});
-	
-	$(document).on("click",".deleteaction",function(){
-		var id=$(this).attr("data-id");
-		$.ajax({
-			url:'ClassificationController',
-			type:'post',
-			data:{action:'delete',id:id},
-			success:function(data){
-				console.log(id);
-				fetchClassification();
-			}
-		});
-	});
+//	
+//	$(document).on("click",".deleteaction",function(){
+//		var id=$(this).attr("data-id");
+//		$.ajax({
+//			url:'ClassificationController',
+//			type:'post',
+//			data:{action:'delete',id:id},
+//			success:function(data){
+//				console.log(id);
+//				fetchClassification();
+//			}
+//		});
+//	});
 
+});
+
+
+$(document).on("click",".deleteaction",function(){
+	var id=$(this).attr("data-id");
+	console.log(id);
+	$.ajax({
+		url :"ClassificationController",
+		type:"post",
+		data:{action:'delete',id:id},
+		success:function(data){
+			console.log(id);
+			fetchClassification();
+		}
+	});
 });
 	
 	function fetchClassification(){
@@ -68,3 +83,6 @@ $(document).ready(function() {
 
 	
 	
+/**
+ * 
+ */

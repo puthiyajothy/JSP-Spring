@@ -61,15 +61,44 @@ public class ClassificationDaoimpl implements ClassificationDAO {
 	}
 
 	@Override
-	public Classification getClassificationById(int classifictionId) {
+	public Classification getClassificationById(int classification_id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Integer deleteClassificationById(Integer classifictionId) {
-		// TODO Auto-generated method stub
-		return null;
+	public void deleteClassificationById(Integer classification_id) {
+		Connection connection = null;
+		PreparedStatement ps= null;
+		
+		try {
+			connection=dataSource.getConnection();
+			String SQL="DELETE FROM classification WHERE classification_id=?";
+			ps=connection.prepareStatement(SQL);
+		
+			String classifyid=Integer.toString(classification_id);
+			ps.setString(1, classifyid);
+			
+			int executeUpdate =ps.executeUpdate();
+			if(executeUpdate>0) {
+				System.out.println("classification is Deleted");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			if(connection!=null) {
+				try {
+					connection.close();
+				} catch (SQLException e) {
+					e.printStackTrace();
+				}
+				
+			}
+			
+		}
+		
+		
 	}
 
 	@Override

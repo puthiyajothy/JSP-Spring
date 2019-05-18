@@ -8,9 +8,9 @@ public interface Classifictionservice {
 	
 
 	public abstract void addClassification(Classification classification);
-	public abstract Classification fetchClassification(int classifictionId);
-	public abstract Integer deleteClassification(int classifictionId);
-	public abstract Classification updateClassificationById(int classificationId, Classification classification);
+	public abstract Classification fetchClassification(int classification_id);
+	public abstract void deleteClassification(int classification_id );
+	public abstract Classification updateClassificationById(int classification_id, Classification classification);
 	public abstract List<Classification>getAllClassifictionList();
 	
 }

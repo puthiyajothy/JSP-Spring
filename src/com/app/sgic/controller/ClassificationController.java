@@ -53,28 +53,41 @@ public class ClassificationController extends HttpServlet {
 			
 		JsonObject root = rootBuilder.add("classification", arrayBuilder).build();
 		writer.print(root);
-		writer.flush();
-		writer.close();
+//		writer.flush();
+//		writer.close();
+		
 		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String classification_id = request.getParameter("classification_id");
-		int a = Integer.parseInt(classification_id);
-		String classification_name = request.getParameter("classification_name");
-
+//		String classification_id = request.getParameter("classification_id");
+//		int a = Integer.parseInt(classification_id);
+//		String classification_name = request.getParameter("classification_name");
+//
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("Beans.xml");
-
+//
 		Classifictionservice classifictionservice = context.getBean("classifictionService",
 				Classifictionserviceimpl.class);
+//
+//		Classification classification = new Classification();
+//		classification.setClassification_id(a);
+//		classification.setClassification_name(classification_name);
+//
+//		classifictionservice.addClassification(classification);
 
-		Classification classification = new Classification();
-		classification.setClassification_id(a);
-		classification.setClassification_name(classification_name);
-
-		classifictionservice.addClassification(classification);
-
+		String action=request.getParameter("action");
+		System.out.println(action);
+//		
+//		int id = Integer.parseInt(request.getParameter("id"));
+//		System.out.println(id);
+		if(action.equalsIgnoreCase("delete")) {
+			int id = Integer.parseInt(request.getParameter("id"));
+//			int id= Integer.parseInt(classifyid);
+			System.out.println(id);
+			classifictionservice.deleteClassification(id);			
+		}
+		System.out.println(action);
 		doGet(request, response);
 //		response.getWriter().println("response");
 	}

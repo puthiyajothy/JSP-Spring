@@ -10,9 +10,7 @@
 <body>
 </br>
 <div>
-<div style="width:90%">
-<button  type="button" class="btn btn-primary " style="float:right;" data-toggle="modal" data-target="#myModal">Add Classifiaction</button>
-</div>
+
 </div>
 </br>
 <div class="container" >

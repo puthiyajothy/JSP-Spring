@@ -17,13 +17,16 @@
 <title>Insert title here</title>
 
 </head>
+<div style="width:90%">
+<button  type="button" class="btn btn-primary " style="float:right;" data-toggle="modal" data-target="#myModal1">Add Author</button>
+</div> 
 <body>
 <div class="container" >
 <div class="row">
 
 
 <div class="col-xs-9">
-<table class="table table-hover">
+<table class="table table-hover" id="authortable">
 <thead>
 <tr>
 <th>Author ID</th>
@@ -34,14 +37,7 @@
 </thead>
 
 <tbody>
-<tr>
-  <td></td>
-  <td></td>
-  
-  <td><button class="btn btn-primary">Delete</button></td>
-  <td><button class="btn btn-success">Edit</button></td>
- 
-</tr>
+
 
 </tbody>
 
@@ -52,6 +48,34 @@
 </div>
 
 </div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+    
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+   
+    <script src="js/author.js"></script>
 
+
+<!-- Modal -->
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">New Author</h4>
+      </div>
+      
+      <div class="modal-body">
+      <form id="authorform"  method="post">
+      <label for="authorid">Author ID</label>
+  		<input type="text" class="form-control" name="author_id">
+  		
+  		<label for="authorname">Author Name</label>
+  		<input type="text" class="form-control" name="author_name">
+  			
+  			
+  		<input type="submit" value="submit"/>
+      </form>
 </body>
 </html>

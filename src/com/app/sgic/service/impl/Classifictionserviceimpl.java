@@ -27,10 +27,6 @@ public class Classifictionserviceimpl implements Classifictionservice {
 		
 	}
 
-	@Override
-	public Integer deleteClassification(int classifictionId) {
-		return classificationDAO.deleteClassificationById(classifictionId);
-	}
 
 
 	@Override
@@ -43,6 +39,14 @@ public class Classifictionserviceimpl implements Classifictionservice {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void deleteClassification(int classification_id) {
+		// TODO Auto-generated method stub
+		classificationDAO.deleteClassificationById(classification_id);
+	}
+
+	
 
 
 	
